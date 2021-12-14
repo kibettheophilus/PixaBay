@@ -1,6 +1,9 @@
 package dev.kibet.pixabay
 
 import android.app.Application
+import dev.kibet.data_remote.remoteDataModule
+import dev.kibet.domain.di.domainModule
+import dev.kibet.presentation.di.presentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -10,7 +13,7 @@ class PixaBayApp : Application() {
         startKoin {
             androidContext(this@PixaBayApp)
             modules(
-                listOf()
+                listOf(presentationModule, remoteDataModule, domainModule)
             )
         }
     }
