@@ -1,9 +1,14 @@
-package dev.kibet.domain.models
+package dev.kibet.data_local.entities
 
-data class Image(
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "images")
+data class ImageEntity(
     val collections: Int,
     val comments: Int,
     val downloads: Int,
+    @PrimaryKey(autoGenerate = false)
     val id: Int,
     val imageHeight: Int,
     val imageSize: Int,

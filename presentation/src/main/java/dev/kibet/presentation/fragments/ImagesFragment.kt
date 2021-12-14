@@ -29,7 +29,7 @@ class ImagesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         subscribeToObservers()
-       // viewModel.getImages()
+        // viewModel.getImages()
     }
 
     private fun subscribeToObservers() {
@@ -37,11 +37,11 @@ class ImagesFragment : Fragment() {
             when (it.status) {
                 Status.SUCCESS -> {
                     Toast.makeText(context, "${it.data}", Toast.LENGTH_LONG).show()
-                    Log.d("IMAGES","${it.data}")
+                    Log.d("IMAGES", "${it.data}")
                 }
                 Status.ERROR -> {
                     Toast.makeText(context, "${it.message}", Toast.LENGTH_LONG).show()
-                    Log.d("ERROR","${it.message}")
+                    Log.d("ERROR", "${it.message}")
                 }
             }
         })
