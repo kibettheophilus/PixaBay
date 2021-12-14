@@ -11,7 +11,8 @@ import dev.kibet.domain.utils.Constants.API_KEY
 class ImageRepositoryImpl(private val api: ImagesApi, private val dao: PixabayDao) :
     ImagesRepository {
     override suspend fun getImages(keyWord: String): List<Image> {
-        val imageResponse = dao.getImagesByKeyword(keyWord)
+        val imageResponse = dao.getAllImages()
+
         return if (imageResponse.isNotEmpty()) {
             imageResponse.map { it.toDomain() }
         } else {
@@ -19,5 +20,9 @@ class ImageRepositoryImpl(private val api: ImagesApi, private val dao: PixabayDa
             dao.saveImages(imageResponse.hits.map { it.toDomain().toEntity() })
             imageResponse.hits.map { it.toDomain() }
         }
+    }
+
+    override suspend fun getImageDetails(id: Int): Image {
+        return dao.getImageDetails(id).toDomain()
     }
 }

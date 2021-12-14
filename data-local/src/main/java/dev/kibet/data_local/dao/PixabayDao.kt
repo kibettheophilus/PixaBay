@@ -8,15 +8,16 @@ import dev.kibet.data_local.entities.ImageEntity
 
 @Dao
 interface PixabayDao {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveImages(images: List<ImageEntity>)
 
     @Query("SELECT * FROM images")
     suspend fun getAllImages(): List<ImageEntity>
 
     @Query("SELECT * FROM images WHERE id=:id")
-    suspend fun getImageById(id: Int): ImageEntity
+    suspend fun getImageDetails(id: Int): ImageEntity
 
-    @Query("SELECT * FROM images WHERE tags=:tags")
-    suspend fun getImagesByKeyword(tags: String): List<ImageEntity>
+
+//    @Query("SELECT * FROM images WHERE `query` = :keyWord")
+//    suspend fun getImagesByKeyword(keyWord: String): List<ImageEntity>
 }

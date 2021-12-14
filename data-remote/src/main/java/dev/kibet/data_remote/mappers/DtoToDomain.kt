@@ -13,27 +13,6 @@ fun ImagesDto.toDomain(): Images {
 
 fun HitDto.toDomain(): Image {
     return Image(
-        collections,
-        comments,
-        downloads,
-        id,
-        imageHeight,
-        imageSize,
-        imageWidth,
-        largeImageURL,
-        likes,
-        pageURL,
-        previewHeight,
-        previewURL,
-        previewWidth,
-        tags,
-        type,
-        user,
-        userImageURL,
-        user_id,
-        views,
-        webformatHeight,
-        webformatURL,
-        webformatWidth
+        comments, downloads, id, likes, user, userImageURL, views, webformatURL
     )
 }

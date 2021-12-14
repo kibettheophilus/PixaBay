@@ -5,8 +5,8 @@ import dev.kibet.domain.repository.ImagesRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 
-class GetImagesUseCase(private val repository: ImagesRepository) {
-    suspend operator fun invoke(keyWord: String): Flow<List<Image>> {
-        return flowOf(repository.getImages(keyWord))
+class GetImageDetails(private val repository: ImagesRepository) {
+    suspend operator fun invoke(id: Int): Flow<Image> {
+        return flowOf(repository.getImageDetails(id))
     }
 }

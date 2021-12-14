@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ImageDetailsFragment">
+
+    <ImageView
+        android:id="@+id/detail_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"/>
+
+
+    <ImageView
+        android:id="@+id/views_iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_red_eye"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/detail_image_view"
+        app:layout_constraintTop_toBottomOf="@id/detail_image_view"/>
+
+    <TextView
+        android:id="@+id/detail_views"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="200 Views"
+        app:layout_constraintStart_toEndOf="@id/views_iv"
+        app:layout_constraintTop_toTopOf="@id/views_iv"
+        app:layout_constraintBottom_toBottomOf="@id/views_iv"
+        android:layout_marginStart="10dp"/>
+
+    <ImageView
+        android:id="@+id/likes_iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_thumb_up"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/detail_image_view"
+        app:layout_constraintTop_toBottomOf="@id/views_iv"/>
+
+    <TextView
+        android:id="@+id/detail_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="200 Likes"
+        app:layout_constraintStart_toEndOf="@id/likes_iv"
+        app:layout_constraintTop_toTopOf="@id/likes_iv"
+        app:layout_constraintBottom_toBottomOf="@id/likes_iv"
+        android:layout_marginStart="10dp"/>
+
+    <ImageView
+        android:id="@+id/comments_iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_comment"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/detail_image_view"
+        app:layout_constraintTop_toBottomOf="@id/likes_iv"/>
+
+    <TextView
+        android:id="@+id/detail_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="200 Comments"
+        app:layout_constraintStart_toEndOf="@id/comments_iv"
+        app:layout_constraintTop_toTopOf="@id/comments_iv"
+        app:layout_constraintBottom_toBottomOf="@id/comments_iv"
+        android:layout_marginStart="10dp"/>
+
+    <ImageView
+        android:id="@+id/downloads_iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_download"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/detail_image_view"
+        app:layout_constraintTop_toBottomOf="@id/comments_iv"/>
+
+    <TextView
+        android:id="@+id/detail_downloads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="200 Downloads"
+        app:layout_constraintStart_toEndOf="@id/downloads_iv"
+        app:layout_constraintTop_toTopOf="@id/downloads_iv"
+        app:layout_constraintBottom_toBottomOf="@id/downloads_iv"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/by_details_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/downloads_iv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/detail_user_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/by_details_tv"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/detail_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/detail_user_image"
+        app:layout_constraintTop_toTopOf="@id/detail_user_image"
+        app:layout_constraintBottom_toBottomOf="@id/detail_user_image"
+        android:text="Theophilus"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:layout_marginStart="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
