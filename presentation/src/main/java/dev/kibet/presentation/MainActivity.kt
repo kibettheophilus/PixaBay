@@ -1,4 +1,4 @@
-package dev.kibet.pixabay
+package dev.kibet.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -8,3 +8,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "PixaBay"
 include ':app'
+include ':presentation'
+include ':domain'
+include ':data-remote'
+include ':data-local'
