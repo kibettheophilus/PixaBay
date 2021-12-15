@@ -18,13 +18,10 @@ class ImageRepositoryImpl(
 ) : ImagesRepository {
     override suspend fun getImages(keyWord: String): List<Image> {
         val keyWords = queryDao.getKeywords().map { it.keyWord }
-        Log.d("KeyWords", "$keyWords $keyWord")
 
         return if (keyWords.contains(keyWord)) {
             val getImageIds = queryDao.getImageIds(keyWord).imageIds.toList()
-            // val list = listOf()
             val imageResponse = pixDao.getImagesByIds(getImageIds)
-            Log.d("ImageIds", "$getImageIds $keyWord")
             imageResponse.map { it.toDomain() }
         } else {
             val imageResponse = api.getImages(API_KEY, keyWord)

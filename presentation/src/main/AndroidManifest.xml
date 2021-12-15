@@ -5,7 +5,6 @@
     <application>
         <activity
             android:name=".activities.MainActivity"
-            android:theme="@style/Theme.AppCompat"
             android:exported="true">
             <nav-graph android:value="@navigation/nav_graph"/>
             <intent-filter>
