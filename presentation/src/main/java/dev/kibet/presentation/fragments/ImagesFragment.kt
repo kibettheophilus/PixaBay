@@ -25,7 +25,7 @@ class ImagesFragment : Fragment() {
     private val imagesAdapter = ImagesAdapter()
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
-    //private var searchKeyword = "dog"
+    // private var searchKeyword = "dog"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,7 +47,7 @@ class ImagesFragment : Fragment() {
         recyclerView.adapter = imagesAdapter
 
         binding.searchButton.setOnClickListener {
-           val searchKeyword = binding.searchEditText.text.trim().toString()
+            val searchKeyword = binding.searchEditText.text.trim().toString()
             viewModel.getImages(searchKeyword)
         }
 
@@ -56,7 +56,7 @@ class ImagesFragment : Fragment() {
                 ImagesFragmentDirections.actionImagesFragmentToImageDetailsFragment(it.id)
             )
         }
-        viewModel.getImages(keyWord = "cat")
+        viewModel.getImages(keyWord = "dog")
     }
 
     private fun subscribeToObservers() {
