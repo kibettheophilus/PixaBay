@@ -1,7 +1,6 @@
 package dev.kibet.presentation.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +24,6 @@ class ImagesFragment : Fragment() {
     private val imagesAdapter = ImagesAdapter()
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
-    // private var searchKeyword = "dog"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,17 +44,21 @@ class ImagesFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = imagesAdapter
 
+        // load dog images by default
+        viewModel.getImages(keyWord = "dog")
+
+        // get input from user and call the api
         binding.searchButton.setOnClickListener {
             val searchKeyword = binding.searchEditText.text.trim().toString()
             viewModel.getImages(searchKeyword)
         }
 
+        // listen to item clicks and move to detail's screen
         imagesAdapter.setOnItemClickListener {
             findNavController().navigate(
                 ImagesFragmentDirections.actionImagesFragmentToImageDetailsFragment(it.id)
             )
         }
-        viewModel.getImages(keyWord = "dog")
     }
 
     private fun subscribeToObservers() {
@@ -66,10 +68,7 @@ class ImagesFragment : Fragment() {
                     progressBar.isVisible = false
                     it.let {
                         imagesAdapter.differ.submitList(it.data)
-                        // recyclerView.adapter = imagesAdapter
                     }
-                    // Toast.makeText(context, "${it.data}", Toast.LENGTH_LONG).show()
-                    Log.d("IMAGES", "${it.data}")
                 }
                 Status.LOADING -> {
                     progressBar.isVisible = true
@@ -77,7 +76,6 @@ class ImagesFragment : Fragment() {
                 Status.ERROR -> {
                     progressBar.isVisible = false
                     Toast.makeText(context, "${it.message}", Toast.LENGTH_LONG).show()
-                    Log.d("ERROR", "${it.message}")
                 }
             }
         })

@@ -47,7 +47,6 @@ class ImageDetailsFragment : Fragment() {
                         detailComments.text = "${it.data?.comments} comments"
                         detailDownloads.text = "${it.data?.downloads} downloads"
                         detailUsername.text = it.data?.user
-                        //Toast.makeText(context, "${it.data}", Toast.LENGTH_LONG).show()
                     }
                 }
             }
