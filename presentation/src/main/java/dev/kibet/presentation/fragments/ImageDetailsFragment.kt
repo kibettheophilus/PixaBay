@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import dev.kibet.domain.utils.Status
 import dev.kibet.presentation.databinding.FragmentImageDetailsBinding
 import dev.kibet.presentation.viewmodels.ImagesViewModel
@@ -38,9 +39,13 @@ class ImageDetailsFragment : Fragment() {
             when (it.status) {
                 Status.SUCCESS -> {
                     binding.apply {
-                        Glide.with(requireContext()).load(it.data?.userImageURL)
+                        Glide.with(requireContext()).load(it.data?.userImageURL).diskCacheStrategy(
+                            DiskCacheStrategy.ALL
+                        )
                             .into(detailUserImage)
-                        Glide.with(requireContext()).load(it.data?.webformatURL)
+                        Glide.with(requireContext()).load(it.data?.webformatURL).diskCacheStrategy(
+                            DiskCacheStrategy.ALL
+                        )
                             .into(detailImageView)
                         detailViews.text = "${it.data?.views} views"
                         detailLikes.text = "${it.data?.likes} likes"

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import dev.kibet.domain.models.Image
 import dev.kibet.presentation.databinding.ImageItemBinding
 
@@ -29,18 +30,21 @@ class ImagesAdapter : RecyclerView.Adapter<ImagesAdapter.ImageViewHolder>() {
         return ImageViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ImageViewHolder, position: Int): Unit = with(holder.binding) {
-        val image = differ.currentList[position]
-        val context = holder.itemView.context
-        imageOwner.text = image.user
-        Glide.with(context).load(image.webformatURL).centerCrop().into(imageView)
+    override fun onBindViewHolder(holder: ImageViewHolder, position: Int): Unit =
+        with(holder.binding) {
+            val image = differ.currentList[position]
+            val context = holder.itemView.context
+            imageOwner.text = image.user
+            Glide.with(context).load(image.webformatURL).diskCacheStrategy(
+                DiskCacheStrategy.ALL
+            ).centerCrop().into(imageView)
 
-        holder.itemView.setOnClickListener {
-            onItemClickListener?.let {
-                it(image)
+            holder.itemView.setOnClickListener {
+                onItemClickListener?.let {
+                    it(image)
+                }
             }
         }
-    }
 
     override fun getItemCount(): Int = differ.currentList.size
 
