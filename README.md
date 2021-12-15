@@ -25,6 +25,12 @@ An android app built using Kotlin that consumes [Pixabay API](https://pixabay.co
 - [Truth](https://truth.dev/) - Assertions Library,provides readability as far as assertions are concerned.
 - [Mockito](https://site.mockito.org/) - Mocking framework for tests.
 - [Roboelectric](http://robolectric.org/) - Framework used to quickly and reliably run unit tests quick using the JVM.
+- 
+## CI/CD
+- [GitHub Actions](https://github.com/kibettheophilus/RickyandMorty/actions/workflows/firebase_distribute.yml) - GitHub actions is used in this project to run the continuous intergration and continuous deployment when a code is pushed to the master branch.
+- [Fastlane](https://fastlane.tools/) - Fastlane is an open source platform aimed at simplifying Android and iOS deployment.
+fastlane lets you automate every aspect of your development and release workflow. 
+- [Firebase App Distribution](https://firebase.google.com/docs/app-distribution) - Makes distributing your apps to trusted testers painless.
 
 ## Screenshots
 ![List](https://user-images.githubusercontent.com/61080898/146204139-a8c62a04-8f20-4925-be9b-c77c07861c4e.png)
