@@ -9,7 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val remoteDataModule = module {
-    single <ImagesRepository> { ImageRepositoryImpl(get(), get()) }
+    single <ImagesRepository> { ImageRepositoryImpl(get(), get(), get()) }
     single {
         Retrofit.Builder()
             .baseUrl(BASE_URL)

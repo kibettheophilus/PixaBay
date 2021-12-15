@@ -28,7 +28,7 @@ class ImagesViewModel(
             imagesUseCase.invoke(keyWord).onStart {
                 _imageStatus.value = Resource.loading(null)
             }.catch {
-                _imageStatus.value = Resource.error(it.message.toString(), null)
+                _imageStatus.value = Resource.error("Check your internet connection", null)
             }.collect {
                 _imageStatus.value = Resource.success(it)
             }

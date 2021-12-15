@@ -11,4 +11,5 @@ val localDataModule = module {
             .fallbackToDestructiveMigration().build()
     }
     single { get<PixDatabase>().pixabayDao() }
+    single { get<PixDatabase>().queryDao() }
 }

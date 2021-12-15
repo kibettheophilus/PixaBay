@@ -8,5 +8,5 @@ data class Image(
     val user: String,
     val userImageURL: String,
     val views: Int,
-    val webformatURL: String,
+    val webformatURL: String
 )

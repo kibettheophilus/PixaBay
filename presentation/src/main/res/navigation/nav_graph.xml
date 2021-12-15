@@ -17,10 +17,15 @@
     <fragment
         android:id="@+id/imageDetailsFragment"
         android:name="dev.kibet.presentation.fragments.ImageDetailsFragment"
-        android:label="fragment_image_details"
+        android:label="Image Details"
         tools:layout="@layout/fragment_image_details" >
         <argument
             android:name="id"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="dev.kibet.presentation.fragments.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
 </navigation>
