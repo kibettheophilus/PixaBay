@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "673799960032",
+    "project_id": "pixabay-f60ee",
+    "storage_bucket": "pixabay-f60ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673799960032:android:1192f20b635c1deaede785",
+        "android_client_info": {
+          "package_name": "dev.kibet.pixabay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673799960032-0gi9i6pil0u87ubig4mjt9ihrc50q1op.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK43Tmh-xNDIwOtOG0oCvETeyDl-zbVJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673799960032-0gi9i6pil0u87ubig4mjt9ihrc50q1op.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
